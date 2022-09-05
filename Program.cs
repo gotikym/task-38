@@ -7,25 +7,25 @@ internal class Program
     {
         int[] massiv1 = new int[] { 1, 2, 3, 1, 1, 1, 2, 2, 4, 4, 7 };
         int[] massiv2 = new int[] { 1, 1, 1 };
-        List<int> list1 = new List<int>();
+        List<int> list = new List<int>();
 
-        OperateMassiveItem(list1, massiv1);
+        AddWithoutRepititions(list, massiv1);
         
-        OperateMassiveItem(list1, massiv2);
+        AddWithoutRepititions(list, massiv2);
 
-        for (int i = 0; i < list1.Count; i++)
+        for (int i = 0; i < list.Count; i++)
         {
-            Console.WriteLine(list1[i]);
+            Console.WriteLine(list[i]);
         }
     }
 
-    static void OperateMassiveItem(List<int> list1, int[] massiv)
+    static void AddWithoutRepititions(List<int> list, int[] massiv)
     {
         for (int i = 0; i < massiv.Length; i++)
         {
-            if (list1.Contains(massiv[i]) == false)
+            if (list.Contains(massiv[i]) == false)
             {
-                list1.Add(massiv[i]);
+                list.Add(massiv[i]);
             }
         }
     }
