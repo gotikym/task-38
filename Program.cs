@@ -5,30 +5,27 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        int[] massiv = new int[] { 1, 2, 3, 1, 1, 1, 2, 2, 4, 4, 7 };
+        int[] massiv1 = new int[] { 1, 2, 3, 1, 1, 1, 2, 2, 4, 4, 7 };
         int[] massiv2 = new int[] { 1, 1, 1 };
         List<int> list1 = new List<int>();
-        List<int> list2 = new List<int>();
 
-        list1.AddRange(massiv);
+        OperateMassiveItem(list1, massiv1);
+        
+        OperateMassiveItem(list1, massiv2);
 
-        list1.AddRange(massiv2);
-
-        CheckRepetition(list1, list2);
-
-        for (int i = 0; i < list2.Count; i++)
+        for (int i = 0; i < list1.Count; i++)
         {
-            Console.WriteLine(list2[i]);
+            Console.WriteLine(list1[i]);
         }
     }
 
-    static void CheckRepetition(List<int> list1, List<int> list2)
+    static void OperateMassiveItem(List<int> list1, int[] massiv)
     {
-        for (int i = 0; i < list1.Count; i++)
+        for (int i = 0; i < massiv.Length; i++)
         {
-            if (list2.Contains(list1[i]) == false)
+            if (list1.Contains(massiv[i]) == false)
             {
-                list2.Add(list1[i]);
+                list1.Add(massiv[i]);
             }
         }
     }
